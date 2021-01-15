@@ -1,0 +1,26 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Day {
+	ArrayList<String> regels = new ArrayList<>();
+	private Scanner scan;
+
+	public Day1(File file) throws FileNotFoundException {
+		Scanner scan = new Scanner(file);
+		this.scan = scan;
+	}
+	
+	public void addRegels() {
+		while (scan.hasNextLine()) {
+			String huidigeRegel = scan.nextLine();
+			regels.add(huidigeRegel);
+		}
+	}
+
+	public void runDay() {
+		addRegels();
+		System.out.println(regels);
+	}
+}
